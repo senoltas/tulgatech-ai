@@ -1,39 +1,65 @@
 # TulgaTech AI
 
-AI-powered construction project analysis platform for construction companies.
+**TulgaTech AI** is an AI-powered construction project analysis platform designed to help contractors and construction companies automate quantity takeoff, cost estimation, and procurement planning.
 
-## Features (in development)
+The system analyzes DXF, DWG, and PDF project files to provide fast, accurate, and data-driven insights for better decision-making.
 
-* DXF/DWG parsing
-* Quantity takeoff
-* Area calculation
-* Cost estimation
-* Procurement optimization
+---
 
-## Status
+## System Architecture
 
-MVP Development
+![TulgaTech AI Architecture](docs/architecture.png)
+
+---
+
+## Key Features (In Development)
+
+- DXF / DWG / PDF project parsing  
+- Automated quantity takeoff  
+- Area and volume calculation  
+- Cost estimation engine  
+- Procurement optimization  
+- Financial planning support  
+
+---
+
+## Project Status
+
+**MVP Development**
+
+Active development with pilot users planned.
+
+---
 
 ## Target Users
 
-* Contractors
-* Construction companies
-* Project managers
+- Contractors  
+- Construction companies  
+- Project managers  
+- Technical offices  
+
+---
 
 ## Roadmap
 
-* Parser stabilization
-* Cost engine integration
-* Dashboard UI
-* Pilot customers
+**Phase 1**
+- Parser stabilization  
+- Core analysis engine  
 
-\## Architecture
+**Phase 2**
+- Cost engine integration  
+- Web dashboard  
 
+**Phase 3**
+- Pilot deployments  
+- Market validation  
 
+---
 
-!\[TulgaTech AI Architecture](docs/architecture.png)
+## Vision
 
+To become a leading AI-powered decision support platform for the construction industry in emerging and global markets.
 
+---
 
-
-
+© TulgaTech | All Rights Reserved
