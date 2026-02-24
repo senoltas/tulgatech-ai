@@ -1,0 +1,8 @@
+ID,İş Kalemi,Kategori,Miktar,Birim,Güven (%),Kaynak,Varsayımlar,Uyarılar
+BRUTTO_AREA_001,Brüt İnşaat Alanı,area,172.8,m²,60,wall_line_detection,calculation_method=bounding_box; includes_exterior_walls=True,Brüt alan bounding box yöntemiyle hesaplandı
+NET_AREA_001,Net Kullanım Alanı,area,146.88,m²,40,user_correction,net_to_brut_ratio=0.85; includes_wall_thickness=False,Net alan tespit edilemedi. Brüt alanın %85'i kabul edildi.
+WALL_EXT_001,Dış Duvar Alanı,area,207.54,m²,60,wall_line_detection,wall_thickness=0.25; wall_height=3.0,
+WALL_INT_001,İç Duvar Alanı,area,646.94,m²,50,wall_line_detection,wall_thickness=0.2; wall_height=3.0,İç duvar kalınlığı dış duvarın %80'i kabul edildi
+DOOR_COUNT_001,Kapı Sayısı,count,117.0,adet,70,wall_line_detection,door_width=0.9; door_height=2.1,
+FLOORING_001,Zemin Kaplama Alanı,area,161.57,m²,36,user_correction,waste_factor=0.1; includes_balcony=False,Zemin kaplama = Net alan kabul edildi
+PAINT_001,Boya Alanı,area,728.35,m²,56,user_correction,paint_coats=2; waste_factor=0.15; window_area_deduction_ratio=0.15,Pencere alanı indirimi %15 varsayıldı

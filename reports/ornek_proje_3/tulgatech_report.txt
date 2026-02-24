@@ -1,0 +1,32 @@
+TULGATECH AI - PROJE ANALİZ RAPORU
+============================================================
+
+TEMEL BİLGİLER:
+----------------------------------------
+Proje ID: ornek_proje_3
+Dosya: data\ornek_proje_3.dxf
+Tarih: 11.02.2026 17:19
+Ölçek: 1/2 (Güven: 10%)
+
+ANA METRAJLAR:
+----------------------------------------
+• Brüt İnşaat Alanı: 172.8 m² (Güven: 60%)
+• Net Kullanım Alanı: 146.9 m² (Güven: 40%)
+• Dış Duvar Alanı: 207.5 m² (Güven: 60%)
+• İç Duvar Alanı: 646.9 m² (Güven: 50%)
+• Kapı Sayısı: 117.0 adet (Güven: 70%)
+• Zemin Kaplama Alanı: 161.6 m² (Güven: 36%)
+• Boya Alanı: 728.4 m² (Güven: 56%)
+
+UYARILAR:
+----------------------------------------
+1. Ölçek güveni düşük olduğu için 'success' false döndü. Metraj hesaplamaya yine de devam edildi.
+2. Brüt alan bounding box yöntemiyle hesaplandı
+3. Net alan tespit edilemedi. Brüt alanın %85'i kabul edildi.
+4. İç duvar kalınlığı dış duvarın %80'i kabul edildi
+5. Zemin kaplama = Net alan kabul edildi
+... ve 1 daha
+
+============================================================
+NOT: Bu rapor otomatik olarak oluşturulmuştur.
+============================================================

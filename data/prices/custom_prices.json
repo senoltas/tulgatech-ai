@@ -1,0 +1,67 @@
+{
+  "wall_area": {
+    "description": "Duvar m² (işçilik+malzeme)",
+    "unit": "m²",
+    "price": 250.0,
+    "category": "construction",
+    "source": "default_2024",
+    "region": "turkey",
+    "valid_until": "2024-12-31"
+  },
+  "floor_area": {
+    "description": "Zemin kaplama m² (seramik+işçilik)",
+    "unit": "m²",
+    "price": 300.0,
+    "category": "finishing",
+    "source": "default_2024"
+  },
+  "paint_area": {
+    "description": "Boya m² (2 kat plastik boya)",
+    "unit": "m²",
+    "price": 80.0,
+    "category": "finishing",
+    "source": "default_2024"
+  },
+  "door_unit": {
+    "description": "Kapı (masif+işçilik+aksesuar)",
+    "unit": "adet",
+    "price": 2500.0,
+    "category": "carpentry",
+    "source": "default_2024"
+  },
+  "window_unit": {
+    "description": "Pencere (PVC çift cam)",
+    "unit": "adet",
+    "price": 4000.0,
+    "category": "carpentry",
+    "source": "default_2024"
+  },
+  "lighting_unit": {
+    "description": "Aydınlatma armatürü (montajlı)",
+    "unit": "adet",
+    "price": 500.0,
+    "category": "electrical",
+    "source": "default_2024"
+  },
+  "brutto_area": {
+    "description": "Brüt inşaat maliyeti m²",
+    "unit": "m²",
+    "price": 8000.0,
+    "category": "construction",
+    "source": "default_2024"
+  },
+  "electrical_point": {
+    "description": "Elektrik priz/anahtar noktası",
+    "unit": "adet",
+    "price": 150.0,
+    "category": "electrical",
+    "source": "default_2024"
+  },
+  "plumbing_point": {
+    "description": "Sıhhi tesisat noktası",
+    "unit": "adet",
+    "price": 500.0,
+    "category": "plumbing",
+    "source": "default_2024"
+  }
+}

@@ -1,0 +1,8 @@
+ID,İş Kalemi,Kategori,Miktar,Birim,Güven (%),Kaynak
+BRUTTO_AREA_001,Brüt İnşaat Alanı,area,0.0,m²,60,wall_line_detection
+NET_AREA_001,Net Kullanım Alanı,area,2.31,m²,70,closed_polyline
+WALL_EXT_001,Dış Duvar Alanı,area,1117.82,m²,60,wall_line_detection
+WALL_INT_001,İç Duvar Alanı,area,2694.72,m²,50,wall_line_detection
+DOOR_COUNT_001,Kapı Sayısı,count,1.0,adet,30,user_correction
+FLOORING_001,Zemin Kaplama Alanı,area,2.54,m²,63,user_correction
+PAINT_001,Boya Alanı,area,4382.24,m²,38,user_correction

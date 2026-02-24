@@ -1,0 +1,484 @@
+{
+  "metadata": {
+    "generated_at": "2026-02-11T17:19:52.100463",
+    "system": "TulgaTech AI v1.0",
+    "report_type": "full_analysis"
+  },
+  "project_summary": {
+    "project_id": "ornek_proje_3",
+    "file": "data\\ornek_proje_3.dxf",
+    "scale": 0.47733,
+    "scale_confidence": 0.1,
+    "total_items": 7,
+    "key_quantities": {
+      "Brüt İnşaat Alanı": {
+        "value": 172.8,
+        "unit": "m²",
+        "confidence": 0.6
+      },
+      "Net Kullanım Alanı": {
+        "value": 146.88,
+        "unit": "m²",
+        "confidence": 0.4
+      },
+      "Dış Duvar Alanı": {
+        "value": 207.54,
+        "unit": "m²",
+        "confidence": 0.6
+      },
+      "İç Duvar Alanı": {
+        "value": 646.94,
+        "unit": "m²",
+        "confidence": 0.5
+      },
+      "Kapı Sayısı": {
+        "value": 117.0,
+        "unit": "adet",
+        "confidence": 0.7
+      },
+      "Zemin Kaplama Alanı": {
+        "value": 161.57,
+        "unit": "m²",
+        "confidence": 0.36
+      },
+      "Boya Alanı": {
+        "value": 728.35,
+        "unit": "m²",
+        "confidence": 0.56
+      }
+    },
+    "confidence_score": 0.531,
+    "processing_time": "2026-02-11T17:19:52.100476"
+  },
+  "detailed_analysis": {
+    "success": true,
+    "project": {
+      "project_info": {
+        "file": "data\\ornek_proje_3.dxf",
+        "scale": 0.47733,
+        "scale_confidence": 0.1,
+        "processing_date": "2026-02-11T17:19:52.098548"
+      },
+      "elements_detected": {
+        "walls": 143,
+        "doors": 117,
+        "spaces": 0,
+        "total_elements": 7331
+      },
+      "quantities": [
+        {
+          "id": "BRUTTO_AREA_001",
+          "name": "Brüt İnşaat Alanı",
+          "category": "area",
+          "value": 172.8,
+          "unit": "m²",
+          "confidence": 0.6,
+          "source": "wall_line_detection",
+          "warnings": [
+            "Brüt alan bounding box yöntemiyle hesaplandı"
+          ],
+          "assumptions": [
+            {
+              "parameter": "calculation_method",
+              "value": "bounding_box",
+              "source": "system",
+              "confidence": 0.7
+            },
+            {
+              "parameter": "includes_exterior_walls",
+              "value": true,
+              "source": "default",
+              "confidence": 0.8
+            }
+          ],
+          "source_data": {
+            "points_count": 286
+          },
+          "created_at": "2026-02-11T14:19:52.098469"
+        },
+        {
+          "id": "NET_AREA_001",
+          "name": "Net Kullanım Alanı",
+          "category": "area",
+          "value": 146.88,
+          "unit": "m²",
+          "confidence": 0.4,
+          "source": "user_correction",
+          "warnings": [
+            "Net alan tespit edilemedi. Brüt alanın %85'i kabul edildi."
+          ],
+          "assumptions": [
+            {
+              "parameter": "net_to_brut_ratio",
+              "value": 0.85,
+              "source": "default",
+              "confidence": 0.7
+            },
+            {
+              "parameter": "includes_wall_thickness",
+              "value": false,
+              "source": "default",
+              "confidence": 0.8
+            }
+          ],
+          "source_data": {
+            "spaces_count": 0,
+            "spaces": []
+          },
+          "created_at": "2026-02-11T14:19:52.098486"
+        },
+        {
+          "id": "WALL_EXT_001",
+          "name": "Dış Duvar Alanı",
+          "category": "area",
+          "value": 207.54,
+          "unit": "m²",
+          "confidence": 0.6,
+          "source": "wall_line_detection",
+          "warnings": [],
+          "assumptions": [
+            {
+              "parameter": "wall_thickness",
+              "value": 0.25,
+              "source": "default",
+              "confidence": 0.8
+            },
+            {
+              "parameter": "wall_height",
+              "value": 3.0,
+              "source": "default",
+              "confidence": 0.7
+            }
+          ],
+          "source_data": {
+            "wall_count": 10,
+            "total_length": 69.17883403849075
+          },
+          "created_at": "2026-02-11T14:19:52.098507"
+        },
+        {
+          "id": "WALL_INT_001",
+          "name": "İç Duvar Alanı",
+          "category": "area",
+          "value": 646.94,
+          "unit": "m²",
+          "confidence": 0.5,
+          "source": "wall_line_detection",
+          "warnings": [
+            "İç duvar kalınlığı dış duvarın %80'i kabul edildi"
+          ],
+          "assumptions": [
+            {
+              "parameter": "wall_thickness",
+              "value": 0.2,
+              "source": "default",
+              "confidence": 0.7
+            },
+            {
+              "parameter": "wall_height",
+              "value": 3.0,
+              "source": "default",
+              "confidence": 0.7
+            }
+          ],
+          "source_data": {
+            "wall_count": 133,
+            "total_length": 215.64745158723568
+          },
+          "created_at": "2026-02-11T14:19:52.098518"
+        },
+        {
+          "id": "DOOR_COUNT_001",
+          "name": "Kapı Sayısı",
+          "category": "count",
+          "value": 117.0,
+          "unit": "adet",
+          "confidence": 0.7,
+          "source": "wall_line_detection",
+          "warnings": [],
+          "assumptions": [
+            {
+              "parameter": "door_width",
+              "value": 0.9,
+              "source": "default",
+              "confidence": 0.8
+            },
+            {
+              "parameter": "door_height",
+              "value": 2.1,
+              "source": "default",
+              "confidence": 0.8
+            }
+          ],
+          "source_data": {
+            "detected_doors": 117
+          },
+          "created_at": "2026-02-11T14:19:52.098525"
+        },
+        {
+          "id": "FLOORING_001",
+          "name": "Zemin Kaplama Alanı",
+          "category": "area",
+          "value": 161.57,
+          "unit": "m²",
+          "confidence": 0.36,
+          "source": "user_correction",
+          "warnings": [
+            "Zemin kaplama = Net alan kabul edildi"
+          ],
+          "assumptions": [
+            {
+              "parameter": "waste_factor",
+              "value": 0.1,
+              "source": "default",
+              "confidence": 0.8
+            },
+            {
+              "parameter": "includes_balcony",
+              "value": false,
+              "source": "default",
+              "confidence": 0.7
+            }
+          ],
+          "source_data": {
+            "net_area_reference": "NET_AREA_001"
+          },
+          "created_at": "2026-02-11T14:19:52.098533"
+        },
+        {
+          "id": "PAINT_001",
+          "name": "Boya Alanı",
+          "category": "area",
+          "value": 728.35,
+          "unit": "m²",
+          "confidence": 0.56,
+          "source": "user_correction",
+          "warnings": [
+            "Pencere alanı indirimi %15 varsayıldı"
+          ],
+          "assumptions": [
+            {
+              "parameter": "paint_coats",
+              "value": 2,
+              "source": "default",
+              "confidence": 0.8
+            },
+            {
+              "parameter": "waste_factor",
+              "value": 0.15,
+              "source": "default",
+              "confidence": 0.7
+            },
+            {
+              "parameter": "window_area_deduction_ratio",
+              "value": 0.15,
+              "source": "default",
+              "confidence": 0.6
+            }
+          ],
+          "source_data": {
+            "wall_area": 854.4788568771793,
+            "door_area": 221.13,
+            "wall_item_ids": [
+              "WALL_EXT_001",
+              "WALL_INT_001"
+            ],
+            "door_item_id": "DOOR_COUNT_001"
+          },
+          "created_at": "2026-02-11T14:19:52.098541"
+        }
+      ],
+      "warnings": [
+        "Ölçek güveni düşük olduğu için 'success' false döndü. Metraj hesaplamaya yine de devam edildi.",
+        "Brüt alan bounding box yöntemiyle hesaplandı",
+        "Net alan tespit edilemedi. Brüt alanın %85'i kabul edildi.",
+        "İç duvar kalınlığı dış duvarın %80'i kabul edildi",
+        "Zemin kaplama = Net alan kabul edildi",
+        "Pencere alanı indirimi %15 varsayıldı"
+      ],
+      "assumptions": [
+        {
+          "parameter": "calculation_method",
+          "value": "bounding_box",
+          "source": "system",
+          "used_in": [
+            "Brüt İnşaat Alanı"
+          ],
+          "confidence": 0.7
+        },
+        {
+          "parameter": "includes_exterior_walls",
+          "value": true,
+          "source": "default",
+          "used_in": [
+            "Brüt İnşaat Alanı"
+          ],
+          "confidence": 0.8
+        },
+        {
+          "parameter": "net_to_brut_ratio",
+          "value": 0.85,
+          "source": "default",
+          "used_in": [
+            "Net Kullanım Alanı"
+          ],
+          "confidence": 0.7
+        },
+        {
+          "parameter": "includes_wall_thickness",
+          "value": false,
+          "source": "default",
+          "used_in": [
+            "Net Kullanım Alanı"
+          ],
+          "confidence": 0.8
+        },
+        {
+          "parameter": "wall_thickness",
+          "value": 0.25,
+          "source": "default",
+          "used_in": [
+            "Dış Duvar Alanı",
+            "İç Duvar Alanı"
+          ],
+          "confidence": 0.8
+        },
+        {
+          "parameter": "wall_height",
+          "value": 3.0,
+          "source": "default",
+          "used_in": [
+            "Dış Duvar Alanı",
+            "İç Duvar Alanı"
+          ],
+          "confidence": 0.7
+        },
+        {
+          "parameter": "door_width",
+          "value": 0.9,
+          "source": "default",
+          "used_in": [
+            "Kapı Sayısı"
+          ],
+          "confidence": 0.8
+        },
+        {
+          "parameter": "door_height",
+          "value": 2.1,
+          "source": "default",
+          "used_in": [
+            "Kapı Sayısı"
+          ],
+          "confidence": 0.8
+        },
+        {
+          "parameter": "waste_factor",
+          "value": 0.1,
+          "source": "default",
+          "used_in": [
+            "Zemin Kaplama Alanı",
+            "Boya Alanı"
+          ],
+          "confidence": 0.8
+        },
+        {
+          "parameter": "includes_balcony",
+          "value": false,
+          "source": "default",
+          "used_in": [
+            "Zemin Kaplama Alanı"
+          ],
+          "confidence": 0.7
+        },
+        {
+          "parameter": "paint_coats",
+          "value": 2,
+          "source": "default",
+          "used_in": [
+            "Boya Alanı"
+          ],
+          "confidence": 0.8
+        },
+        {
+          "parameter": "window_area_deduction_ratio",
+          "value": 0.15,
+          "source": "default",
+          "used_in": [
+            "Boya Alanı"
+          ],
+          "confidence": 0.6
+        }
+      ]
+    },
+    "summary": {
+      "key_quantities": {
+        "Brüt İnşaat Alanı": {
+          "value": 172.8,
+          "unit": "m²",
+          "confidence": 0.6
+        },
+        "Net Kullanım Alanı": {
+          "value": 146.88,
+          "unit": "m²",
+          "confidence": 0.4
+        },
+        "Dış Duvar Alanı": {
+          "value": 207.54,
+          "unit": "m²",
+          "confidence": 0.6
+        },
+        "İç Duvar Alanı": {
+          "value": 646.94,
+          "unit": "m²",
+          "confidence": 0.5
+        },
+        "Kapı Sayısı": {
+          "value": 117.0,
+          "unit": "adet",
+          "confidence": 0.7
+        },
+        "Zemin Kaplama Alanı": {
+          "value": 161.57,
+          "unit": "m²",
+          "confidence": 0.36
+        },
+        "Boya Alanı": {
+          "value": 728.35,
+          "unit": "m²",
+          "confidence": 0.56
+        }
+      },
+      "cost_estimate": {
+        "Brüt İnşaat Alanı": {
+          "unit_cost": 8000,
+          "total_cost": 1382400.0,
+          "currency": "TRY"
+        },
+        "Zemin Kaplama Alanı": {
+          "unit_cost": 300,
+          "total_cost": 48471.0,
+          "currency": "TRY"
+        },
+        "Boya Alanı": {
+          "unit_cost": 80,
+          "total_cost": 58268.0,
+          "currency": "TRY"
+        }
+      },
+      "total_estimated_cost": 1489139.0,
+      "confidence_score": 0.531,
+      "recommendations": []
+    },
+    "export_json": "{\n  \"timestamp\": \"2026-02-11T17:19:52.098834\",\n  \"items\": [\n    {\n      \"id\": \"BRUTTO_AREA_001\",\n      \"name\": \"Brüt İnşaat Alanı\",\n      \"category\": \"area\",\n      \"value\": 172.8,\n      \"unit\": \"m²\",\n      \"confidence\": 0.6,\n      \"source\": \"wall_line_detection\",\n      \"warnings\": [\n        \"Brüt alan bounding box yöntemiyle hesaplandı\"\n      ],\n      \"assumptions\": [\n        {\n          \"parameter\": \"calculation_method\",\n          \"value\": \"bounding_box\",\n          \"source\": \"system\",\n          \"confidence\": 0.7\n        },\n        {\n          \"parameter\": \"includes_exterior_walls\",\n          \"value\": true,\n          \"source\": \"default\",\n          \"confidence\": 0.8\n        }\n      ],\n      \"source_data\": {\n        \"points_count\": 286\n      },\n      \"created_at\": \"2026-02-11T14:19:52.098469\"\n    },\n    {\n      \"id\": \"NET_AREA_001\",\n      \"name\": \"Net Kullanım Alanı\",\n      \"category\": \"area\",\n      \"value\": 146.88,\n      \"unit\": \"m²\",\n      \"confidence\": 0.4,\n      \"source\": \"user_correction\",\n      \"warnings\": [\n        \"Net alan tespit edilemedi. Brüt alanın %85'i kabul edildi.\"\n      ],\n      \"assumptions\": [\n        {\n          \"parameter\": \"net_to_brut_ratio\",\n          \"value\": 0.85,\n          \"source\": \"default\",\n          \"confidence\": 0.7\n        },\n        {\n          \"parameter\": \"includes_wall_thickness\",\n          \"value\": false,\n          \"source\": \"default\",\n          \"confidence\": 0.8\n        }\n      ],\n      \"source_data\": {\n        \"spaces_count\": 0,\n        \"spaces\": []\n      },\n      \"created_at\": \"2026-02-11T14:19:52.098486\"\n    },\n    {\n      \"id\": \"WALL_EXT_001\",\n      \"name\": \"Dış Duvar Alanı\",\n      \"category\": \"area\",\n      \"value\": 207.54,\n      \"unit\": \"m²\",\n      \"confidence\": 0.6,\n      \"source\": \"wall_line_detection\",\n      \"warnings\": [],\n      \"assumptions\": [\n        {\n          \"parameter\": \"wall_thickness\",\n          \"value\": 0.25,\n          \"source\": \"default\",\n          \"confidence\": 0.8\n        },\n        {\n          \"parameter\": \"wall_height\",\n          \"value\": 3.0,\n          \"source\": \"default\",\n          \"confidence\": 0.7\n        }\n      ],\n      \"source_data\": {\n        \"wall_count\": 10,\n        \"total_length\": 69.17883403849075\n      },\n      \"created_at\": \"2026-02-11T14:19:52.098507\"\n    },\n    {\n      \"id\": \"WALL_INT_001\",\n      \"name\": \"İç Duvar Alanı\",\n      \"category\": \"area\",\n      \"value\": 646.94,\n      \"unit\": \"m²\",\n      \"confidence\": 0.5,\n      \"source\": \"wall_line_detection\",\n      \"warnings\": [\n        \"İç duvar kalınlığı dış duvarın %80'i kabul edildi\"\n      ],\n      \"assumptions\": [\n        {\n          \"parameter\": \"wall_thickness\",\n          \"value\": 0.2,\n          \"source\": \"default\",\n          \"confidence\": 0.7\n        },\n        {\n          \"parameter\": \"wall_height\",\n          \"value\": 3.0,\n          \"source\": \"default\",\n          \"confidence\": 0.7\n        }\n      ],\n      \"source_data\": {\n        \"wall_count\": 133,\n        \"total_length\": 215.64745158723568\n      },\n      \"created_at\": \"2026-02-11T14:19:52.098518\"\n    },\n    {\n      \"id\": \"DOOR_COUNT_001\",\n      \"name\": \"Kapı Sayısı\",\n      \"category\": \"count\",\n      \"value\": 117.0,\n      \"unit\": \"adet\",\n      \"confidence\": 0.7,\n      \"source\": \"wall_line_detection\",\n      \"warnings\": [],\n      \"assumptions\": [\n        {\n          \"parameter\": \"door_width\",\n          \"value\": 0.9,\n          \"source\": \"default\",\n          \"confidence\": 0.8\n        },\n        {\n          \"parameter\": \"door_height\",\n          \"value\": 2.1,\n          \"source\": \"default\",\n          \"confidence\": 0.8\n        }\n      ],\n      \"source_data\": {\n        \"detected_doors\": 117\n      },\n      \"created_at\": \"2026-02-11T14:19:52.098525\"\n    },\n    {\n      \"id\": \"FLOORING_001\",\n      \"name\": \"Zemin Kaplama Alanı\",\n      \"category\": \"area\",\n      \"value\": 161.57,\n      \"unit\": \"m²\",\n      \"confidence\": 0.36,\n      \"source\": \"user_correction\",\n      \"warnings\": [\n        \"Zemin kaplama = Net alan kabul edildi\"\n      ],\n      \"assumptions\": [\n        {\n          \"parameter\": \"waste_factor\",\n          \"value\": 0.1,\n          \"source\": \"default\",\n          \"confidence\": 0.8\n        },\n        {\n          \"parameter\": \"includes_balcony\",\n          \"value\": false,\n          \"source\": \"default\",\n          \"confidence\": 0.7\n        }\n      ],\n      \"source_data\": {\n        \"net_area_reference\": \"NET_AREA_001\"\n      },\n      \"created_at\": \"2026-02-11T14:19:52.098533\"\n    },\n    {\n      \"id\": \"PAINT_001\",\n      \"name\": \"Boya Alanı\",\n      \"category\": \"area\",\n      \"value\": 728.35,\n      \"unit\": \"m²\",\n      \"confidence\": 0.56,\n      \"source\": \"user_correction\",\n      \"warnings\": [\n        \"Pencere alanı indirimi %15 varsayıldı\"\n      ],\n      \"assumptions\": [\n        {\n          \"parameter\": \"paint_coats\",\n          \"value\": 2,\n          \"source\": \"default\",\n          \"confidence\": 0.8\n        },\n        {\n          \"parameter\": \"waste_factor\",\n          \"value\": 0.15,\n          \"source\": \"default\",\n          \"confidence\": 0.7\n        },\n        {\n          \"parameter\": \"window_area_deduction_ratio\",\n          \"value\": 0.15,\n          \"source\": \"default\",\n          \"confidence\": 0.6\n        }\n      ],\n      \"source_data\": {\n        \"wall_area\": 854.4788568771793,\n        \"door_area\": 221.13,\n        \"wall_item_ids\": [\n          \"WALL_EXT_001\",\n          \"WALL_INT_001\"\n        ],\n        \"door_item_id\": \"DOOR_COUNT_001\"\n      },\n      \"created_at\": \"2026-02-11T14:19:52.098541\"\n    }\n  ],\n  \"summary\": {\n    \"total_items\": 7,\n    \"average_confidence\": 0.532,\n    \"total_area_m2\": 2064.08\n  }\n}"
+  },
+  "recommendations": [],
+  "export_info": {
+    "formats_available": [
+      "json",
+      "txt",
+      "csv",
+      "html"
+    ],
+    "notes": "Bu rapor TulgaTech AI tarafından otomatik oluşturulmuştur."
+  }
+}

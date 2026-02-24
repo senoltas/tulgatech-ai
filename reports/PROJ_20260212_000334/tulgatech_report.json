@@ -1,0 +1,1100 @@
+{
+  "metadata": {
+    "generated_at": "2026-02-12T00:03:34.509227",
+    "system": "TulgaTech AI v1.0",
+    "report_type": "full_analysis",
+    "base_dir": "C:\\Users\\senol\\Desktop\\tulgatech_ai"
+  },
+  "project_summary": {
+    "project_id": "",
+    "filename": "",
+    "scale": 0.5,
+    "total_items": 7,
+    "key_quantities": {
+      "Brüt İnşaat Alanı": {
+        "value": 0.0,
+        "unit": "m²",
+        "confidence": 0.1
+      },
+      "Net Kullanım Alanı": {
+        "value": 0.0,
+        "unit": "m²",
+        "confidence": 0.4
+      },
+      "Dış Duvar Alanı": {
+        "value": 0.0,
+        "unit": "m²",
+        "confidence": 0.3
+      },
+      "İç Duvar Alanı": {
+        "value": 0.0,
+        "unit": "m²",
+        "confidence": 0.5
+      },
+      "Kapı Sayısı": {
+        "value": 0.0,
+        "unit": "adet",
+        "confidence": 0.1
+      },
+      "Zemin Kaplama Alanı": {
+        "value": 0.0,
+        "unit": "m²",
+        "confidence": 0.36000000000000004
+      },
+      "Boya Alanı": {
+        "value": 0.0,
+        "unit": "m²",
+        "confidence": 0.225
+      }
+    },
+    "confidence_score": 0,
+    "processing_time": "2026-02-12T00:03:34.509232"
+  },
+  "detailed_analysis": {
+    "project": {
+      "elements": {
+        "lines": [],
+        "polylines": [],
+        "circles": [],
+        "texts": [],
+        "dimensions": []
+      },
+      "architectural": {
+        "potential_walls": [],
+        "potential_doors": [],
+        "potential_windows": [],
+        "spaces": []
+      },
+      "scale": 0.5,
+      "scale_confidence": 0.1,
+      "warnings": [
+        "Ölçek zayıf tespit edildi. Şimdilik 1/2 varsayıldı (confidence=10%)."
+      ],
+      "success": true,
+      "quantities": [
+        {
+          "id": "BRUTTO_AREA_001",
+          "name": "Brüt İnşaat Alanı",
+          "category": "area",
+          "value": 0.0,
+          "unit": "m²",
+          "confidence": 0.1,
+          "source": "user_correction",
+          "warnings": [
+            "Yeterli duvar verisi yok"
+          ],
+          "assumptions": [
+            {
+              "parameter": "calculation_method",
+              "value": "bounding_box",
+              "source": "system",
+              "confidence": 0.7
+            },
+            {
+              "parameter": "includes_exterior_walls",
+              "value": true,
+              "source": "default",
+              "confidence": 0.8
+            }
+          ],
+          "source_data": {
+            "points_count": 0
+          },
+          "created_at": "2026-02-11T21:03:34.507956"
+        },
+        {
+          "id": "NET_AREA_001",
+          "name": "Net Kullanım Alanı",
+          "category": "area",
+          "value": 0.0,
+          "unit": "m²",
+          "confidence": 0.4,
+          "source": "user_correction",
+          "warnings": [
+            "Net alan tespit edilemedi. Brüt alanın %85'i kabul edildi."
+          ],
+          "assumptions": [
+            {
+              "parameter": "net_to_brut_ratio",
+              "value": 0.85,
+              "source": "default",
+              "confidence": 0.7
+            },
+            {
+              "parameter": "includes_wall_thickness",
+              "value": false,
+              "source": "default",
+              "confidence": 0.8
+            }
+          ],
+          "source_data": {
+            "spaces_count": 0,
+            "spaces": []
+          },
+          "created_at": "2026-02-11T21:03:34.508013"
+        },
+        {
+          "id": "WALL_EXT_001",
+          "name": "Dış Duvar Alanı",
+          "category": "area",
+          "value": 0.0,
+          "unit": "m²",
+          "confidence": 0.3,
+          "source": "wall_line_detection",
+          "warnings": [],
+          "assumptions": [
+            {
+              "parameter": "wall_thickness",
+              "value": 0.25,
+              "source": "default",
+              "confidence": 0.8
+            },
+            {
+              "parameter": "wall_height",
+              "value": 3.0,
+              "source": "default",
+              "confidence": 0.7
+            }
+          ],
+          "source_data": {
+            "wall_count": 0,
+            "total_length": 0.0
+          },
+          "created_at": "2026-02-11T21:03:34.508022"
+        },
+        {
+          "id": "WALL_INT_001",
+          "name": "İç Duvar Alanı",
+          "category": "area",
+          "value": 0.0,
+          "unit": "m²",
+          "confidence": 0.5,
+          "source": "wall_line_detection",
+          "warnings": [
+            "İç duvar kalınlığı dış duvarın %80'i kabul edildi"
+          ],
+          "assumptions": [
+            {
+              "parameter": "wall_thickness",
+              "value": 0.2,
+              "source": "default",
+              "confidence": 0.7
+            },
+            {
+              "parameter": "wall_height",
+              "value": 3.0,
+              "source": "default",
+              "confidence": 0.7
+            }
+          ],
+          "source_data": {
+            "wall_count": 0,
+            "total_length": 0.0
+          },
+          "created_at": "2026-02-11T21:03:34.508026"
+        },
+        {
+          "id": "DOOR_COUNT_001",
+          "name": "Kapı Sayısı",
+          "category": "count",
+          "value": 0.0,
+          "unit": "adet",
+          "confidence": 0.1,
+          "source": "user_correction",
+          "warnings": [
+            "Kapı tespit edilemedi"
+          ],
+          "assumptions": [
+            {
+              "parameter": "door_width",
+              "value": 0.9,
+              "source": "default",
+              "confidence": 0.8
+            },
+            {
+              "parameter": "door_height",
+              "value": 2.1,
+              "source": "default",
+              "confidence": 0.8
+            }
+          ],
+          "source_data": {
+            "detected_doors": 0
+          },
+          "created_at": "2026-02-11T21:03:34.508032"
+        },
+        {
+          "id": "FLOORING_001",
+          "name": "Zemin Kaplama Alanı",
+          "category": "area",
+          "value": 0.0,
+          "unit": "m²",
+          "confidence": 0.36,
+          "source": "user_correction",
+          "warnings": [
+            "Zemin kaplama = Net alan kabul edildi"
+          ],
+          "assumptions": [
+            {
+              "parameter": "waste_factor",
+              "value": 0.1,
+              "source": "default",
+              "confidence": 0.8
+            },
+            {
+              "parameter": "includes_balcony",
+              "value": false,
+              "source": "default",
+              "confidence": 0.7
+            }
+          ],
+          "source_data": {
+            "net_area_reference": "NET_AREA_001"
+          },
+          "created_at": "2026-02-11T21:03:34.508038"
+        },
+        {
+          "id": "PAINT_001",
+          "name": "Boya Alanı",
+          "category": "area",
+          "value": 0.0,
+          "unit": "m²",
+          "confidence": 0.23,
+          "source": "user_correction",
+          "warnings": [
+            "Pencere alanı indirimi %15 varsayıldı"
+          ],
+          "assumptions": [
+            {
+              "parameter": "paint_coats",
+              "value": 2,
+              "source": "default",
+              "confidence": 0.8
+            },
+            {
+              "parameter": "waste_factor",
+              "value": 0.15,
+              "source": "default",
+              "confidence": 0.7
+            },
+            {
+              "parameter": "window_area_deduction_ratio",
+              "value": 0.15,
+              "source": "default",
+              "confidence": 0.6
+            }
+          ],
+          "source_data": {
+            "wall_area": 0.0,
+            "door_area": 0.0,
+            "wall_item_ids": [
+              "WALL_EXT_001",
+              "WALL_INT_001"
+            ],
+            "door_item_id": "DOOR_COUNT_001"
+          },
+          "created_at": "2026-02-11T21:03:34.508051"
+        }
+      ]
+    },
+    "summary": {
+      "key_quantities": {
+        "Brüt İnşaat Alanı": {
+          "value": 0.0,
+          "unit": "m²",
+          "confidence": 0.1
+        },
+        "Net Kullanım Alanı": {
+          "value": 0.0,
+          "unit": "m²",
+          "confidence": 0.4
+        },
+        "Dış Duvar Alanı": {
+          "value": 0.0,
+          "unit": "m²",
+          "confidence": 0.3
+        },
+        "İç Duvar Alanı": {
+          "value": 0.0,
+          "unit": "m²",
+          "confidence": 0.5
+        },
+        "Kapı Sayısı": {
+          "value": 0.0,
+          "unit": "adet",
+          "confidence": 0.1
+        },
+        "Zemin Kaplama Alanı": {
+          "value": 0.0,
+          "unit": "m²",
+          "confidence": 0.36000000000000004
+        },
+        "Boya Alanı": {
+          "value": 0.0,
+          "unit": "m²",
+          "confidence": 0.225
+        }
+      },
+      "total_estimated_cost": 0.0,
+      "confidence_score": 0.2835714285714286,
+      "recommendations": [
+        "Ölçek güveni düşükse projede en az 1 bilinen ölçüyle kalibrasyon yapın.",
+        "Kapı/pencere tespiti zayıfsa manuel kontrolle adetleri doğrulayın."
+      ]
+    },
+    "cost_analysis": {
+      "currency": "TRY",
+      "total_cost": 0.0,
+      "cost_items": [
+        {
+          "quantity_id": "BRUTTO_AREA_001",
+          "name": "Brüt İnşaat Alanı",
+          "quantity": 0.0,
+          "unit": "m²",
+          "unit_price": 8000.0,
+          "material_cost": 0.0,
+          "total_cost": 0.0,
+          "price_key": "brutto_area",
+          "confidence": 0.09,
+          "category": "construction",
+          "source": "default_2024"
+        },
+        {
+          "quantity_id": "NET_AREA_001",
+          "name": "Net Kullanım Alanı",
+          "quantity": 0.0,
+          "unit": "m²",
+          "unit_price": 8000.0,
+          "material_cost": 0.0,
+          "total_cost": 0.0,
+          "price_key": "brutto_area",
+          "confidence": 0.36,
+          "category": "construction",
+          "source": "default_2024"
+        },
+        {
+          "quantity_id": "WALL_EXT_001",
+          "name": "Dış Duvar Alanı",
+          "quantity": 0.0,
+          "unit": "m²",
+          "unit_price": 250.0,
+          "material_cost": 0.0,
+          "total_cost": 0.0,
+          "price_key": "wall_area",
+          "confidence": 0.27,
+          "category": "construction",
+          "source": "default_2024"
+        },
+        {
+          "quantity_id": "WALL_INT_001",
+          "name": "İç Duvar Alanı",
+          "quantity": 0.0,
+          "unit": "m²",
+          "unit_price": 250.0,
+          "material_cost": 0.0,
+          "total_cost": 0.0,
+          "price_key": "wall_area",
+          "confidence": 0.45,
+          "category": "construction",
+          "source": "default_2024"
+        },
+        {
+          "quantity_id": "DOOR_COUNT_001",
+          "name": "Kapı Sayısı",
+          "quantity": 0.0,
+          "unit": "adet",
+          "unit_price": 2500.0,
+          "material_cost": 0.0,
+          "total_cost": 0.0,
+          "price_key": "door_unit",
+          "confidence": 0.09,
+          "category": "carpentry",
+          "source": "default_2024"
+        },
+        {
+          "quantity_id": "FLOORING_001",
+          "name": "Zemin Kaplama Alanı",
+          "quantity": 0.0,
+          "unit": "m²",
+          "unit_price": 300.0,
+          "material_cost": 0.0,
+          "total_cost": 0.0,
+          "price_key": "floor_area",
+          "confidence": 0.324,
+          "category": "finishing",
+          "source": "default_2024"
+        },
+        {
+          "quantity_id": "PAINT_001",
+          "name": "Boya Alanı",
+          "quantity": 0.0,
+          "unit": "m²",
+          "unit_price": 80.0,
+          "material_cost": 0.0,
+          "total_cost": 0.0,
+          "price_key": "paint_area",
+          "confidence": 0.203,
+          "category": "finishing",
+          "source": "default_2024"
+        }
+      ],
+      "scenarios": {
+        "economy": {
+          "description": "Ekonomik Seçenek",
+          "cost_factor": 0.75,
+          "total_cost": 0.0,
+          "savings": 0.0,
+          "features": [
+            "Standart malzeme",
+            "Yerli ürünler",
+            "Temel işçilik"
+          ]
+        },
+        "standard": {
+          "description": "Standart Seçenek",
+          "cost_factor": 1.0,
+          "total_cost": 0.0,
+          "savings": 0,
+          "features": [
+            "Orta kalite",
+            "Markalı ürünler",
+            "Deneyimli işçilik"
+          ]
+        },
+        "premium": {
+          "description": "Premium Seçenek",
+          "cost_factor": 1.4,
+          "total_cost": 0.0,
+          "savings": -0.0,
+          "features": [
+            "Yüksek kalite",
+            "İthal ürünler",
+            "Uzman işçilik",
+            "Tasarım detayları"
+          ]
+        },
+        "phased": {
+          "description": "Aşamalı İnşaat",
+          "cost_factor": 1.0,
+          "total_cost": 0.0,
+          "payment_schedule": [
+            {
+              "phase": "Başlangıç",
+              "percentage": 30,
+              "amount": 0.0,
+              "timing": "İş başlangıcında",
+              "description": "Malzeme temini avansı"
+            },
+            {
+              "phase": "İlerleme",
+              "percentage": 40,
+              "amount": 0.0,
+              "timing": "İşin %50'sinde",
+              "description": "Kaba inşaat tamamlandığında"
+            },
+            {
+              "phase": "Tamamlanma",
+              "percentage": 30,
+              "amount": 0.0,
+              "timing": "Teslimatta",
+              "description": "Son ödeme"
+            }
+          ],
+          "features": [
+            "3 aşamada ödeme",
+            "Nakit akışı",
+            "Stok yönetimi"
+          ]
+        }
+      },
+      "breakdown": {
+        "by_category": {
+          "construction": {
+            "total_cost": 0.0,
+            "items": [
+              {
+                "name": "Brüt İnşaat Alanı",
+                "cost": 0.0
+              },
+              {
+                "name": "Net Kullanım Alanı",
+                "cost": 0.0
+              },
+              {
+                "name": "Dış Duvar Alanı",
+                "cost": 0.0
+              },
+              {
+                "name": "İç Duvar Alanı",
+                "cost": 0.0
+              }
+            ],
+            "percentage": 0.0
+          },
+          "carpentry": {
+            "total_cost": 0.0,
+            "items": [
+              {
+                "name": "Kapı Sayısı",
+                "cost": 0.0
+              }
+            ],
+            "percentage": 0.0
+          },
+          "finishing": {
+            "total_cost": 0.0,
+            "items": [
+              {
+                "name": "Zemin Kaplama Alanı",
+                "cost": 0.0
+              },
+              {
+                "name": "Boya Alanı",
+                "cost": 0.0
+              }
+            ],
+            "percentage": 0.0
+          }
+        },
+        "total_cost": 0.0,
+        "most_expensive_category": "construction"
+      },
+      "assumptions": {
+        "waste_factors": {
+          "material": 1.1,
+          "labor": 1.3,
+          "overhead": 1.15
+        },
+        "price_source": "default_database_or_custom",
+        "calculation_date": "2026-02-12T00:03:34.508246"
+      }
+    },
+    "schedule": {
+      "start_date": "2026-02-19T00:03:34.508301",
+      "end_date": "2026-04-24T00:03:34.508301",
+      "total_duration_days": 65,
+      "tasks": [
+        {
+          "id": "site_prep",
+          "name": "Şantiye Kurulumu",
+          "category": "preparation",
+          "start_date": "2026-02-19T00:03:34.508301",
+          "end_date": "2026-02-21T00:03:34.508301",
+          "duration_days": 3,
+          "depends_on": [],
+          "crew_size": 4,
+          "progress": 0.0,
+          "status": "planned"
+        },
+        {
+          "id": "excavation",
+          "name": "Kazı İşleri",
+          "category": "foundation",
+          "start_date": "2026-02-22T00:03:34.508301",
+          "end_date": "2026-02-27T00:03:34.508301",
+          "duration_days": 6,
+          "depends_on": [
+            "site_prep"
+          ],
+          "crew_size": 6,
+          "progress": 0.0,
+          "status": "planned"
+        },
+        {
+          "id": "foundation",
+          "name": "Temel İşleri",
+          "category": "foundation",
+          "start_date": "2026-02-28T00:03:34.508301",
+          "end_date": "2026-03-07T00:03:34.508301",
+          "duration_days": 8,
+          "depends_on": [
+            "excavation"
+          ],
+          "crew_size": 8,
+          "progress": 0.0,
+          "status": "planned"
+        },
+        {
+          "id": "walls_structure",
+          "name": "Duvar ve Taşıyıcı Sistem",
+          "category": "structure",
+          "start_date": "2026-03-08T00:03:34.508301",
+          "end_date": "2026-03-17T00:03:34.508301",
+          "duration_days": 10,
+          "depends_on": [
+            "foundation"
+          ],
+          "crew_size": 10,
+          "progress": 0.0,
+          "status": "planned"
+        },
+        {
+          "id": "roof",
+          "name": "Çatı İşleri",
+          "category": "enclosure",
+          "start_date": "2026-03-18T00:03:34.508301",
+          "end_date": "2026-03-21T00:03:34.508301",
+          "duration_days": 4,
+          "depends_on": [
+            "walls_structure"
+          ],
+          "crew_size": 6,
+          "progress": 0.0,
+          "status": "planned"
+        },
+        {
+          "id": "exterior_walls",
+          "name": "Dış Cephe",
+          "category": "enclosure",
+          "start_date": "2026-03-22T00:03:34.508301",
+          "end_date": "2026-03-27T00:03:34.508301",
+          "duration_days": 6,
+          "depends_on": [
+            "roof"
+          ],
+          "crew_size": 8,
+          "progress": 0.0,
+          "status": "planned"
+        },
+        {
+          "id": "windows_doors",
+          "name": "Pencere ve Kapı Montajı",
+          "category": "enclosure",
+          "start_date": "2026-03-28T00:03:34.508301",
+          "end_date": "2026-03-30T00:03:34.508301",
+          "duration_days": 3,
+          "depends_on": [
+            "exterior_walls"
+          ],
+          "crew_size": 4,
+          "progress": 0.0,
+          "status": "planned"
+        },
+        {
+          "id": "interior_walls",
+          "name": "İç Bölme Duvar",
+          "category": "interior",
+          "start_date": "2026-03-31T00:03:34.508301",
+          "end_date": "2026-04-04T00:03:34.508301",
+          "duration_days": 5,
+          "depends_on": [
+            "windows_doors"
+          ],
+          "crew_size": 6,
+          "progress": 0.0,
+          "status": "planned"
+        },
+        {
+          "id": "electrical_rough",
+          "name": "Kaba Elektrik",
+          "category": "mep",
+          "start_date": "2026-04-05T00:03:34.508301",
+          "end_date": "2026-04-07T00:03:34.508301",
+          "duration_days": 3,
+          "depends_on": [
+            "interior_walls"
+          ],
+          "crew_size": 3,
+          "progress": 0.0,
+          "status": "planned"
+        },
+        {
+          "id": "plumbing_rough",
+          "name": "Kaba Sıhhi Tesisat",
+          "category": "mep",
+          "start_date": "2026-04-05T00:03:34.508301",
+          "end_date": "2026-04-06T00:03:34.508301",
+          "duration_days": 2,
+          "depends_on": [
+            "interior_walls"
+          ],
+          "crew_size": 3,
+          "progress": 0.0,
+          "status": "planned"
+        },
+        {
+          "id": "plaster",
+          "name": "Sıva İşleri",
+          "category": "interior",
+          "start_date": "2026-04-08T00:03:34.508301",
+          "end_date": "2026-04-13T00:03:34.508301",
+          "duration_days": 6,
+          "depends_on": [
+            "electrical_rough",
+            "plumbing_rough"
+          ],
+          "crew_size": 6,
+          "progress": 0.0,
+          "status": "planned"
+        },
+        {
+          "id": "flooring",
+          "name": "Zemin Kaplama",
+          "category": "finishing",
+          "start_date": "2026-04-14T00:03:34.508301",
+          "end_date": "2026-04-17T00:03:34.508301",
+          "duration_days": 4,
+          "depends_on": [
+            "plaster"
+          ],
+          "crew_size": 4,
+          "progress": 0.0,
+          "status": "planned"
+        },
+        {
+          "id": "painting",
+          "name": "Boya İşleri",
+          "category": "finishing",
+          "start_date": "2026-04-18T00:03:34.508301",
+          "end_date": "2026-04-21T00:03:34.508301",
+          "duration_days": 4,
+          "depends_on": [
+            "flooring"
+          ],
+          "crew_size": 4,
+          "progress": 0.0,
+          "status": "planned"
+        },
+        {
+          "id": "finish_electrical",
+          "name": "Son Elektrik",
+          "category": "mep",
+          "start_date": "2026-04-22T00:03:34.508301",
+          "end_date": "2026-04-23T00:03:34.508301",
+          "duration_days": 2,
+          "depends_on": [
+            "painting"
+          ],
+          "crew_size": 2,
+          "progress": 0.0,
+          "status": "planned"
+        },
+        {
+          "id": "finish_plumbing",
+          "name": "Son Sıhhi Tesisat",
+          "category": "mep",
+          "start_date": "2026-04-22T00:03:34.508301",
+          "end_date": "2026-04-22T00:03:34.508301",
+          "duration_days": 1,
+          "depends_on": [
+            "painting"
+          ],
+          "crew_size": 2,
+          "progress": 0.0,
+          "status": "planned"
+        },
+        {
+          "id": "cleanup",
+          "name": "Temizlik ve Teslim",
+          "category": "finishing",
+          "start_date": "2026-04-24T00:03:34.508301",
+          "end_date": "2026-04-24T00:03:34.508301",
+          "duration_days": 1,
+          "depends_on": [
+            "finish_electrical",
+            "finish_plumbing"
+          ],
+          "crew_size": 4,
+          "progress": 0.0,
+          "status": "planned"
+        }
+      ],
+      "critical_path": [
+        "site_prep",
+        "excavation",
+        "foundation",
+        "walls_structure",
+        "roof",
+        "exterior_walls",
+        "windows_doors",
+        "interior_walls",
+        "electrical_rough",
+        "plumbing_rough",
+        "plaster",
+        "flooring",
+        "painting",
+        "finish_electrical",
+        "finish_plumbing",
+        "cleanup"
+      ],
+      "milestones": [
+        {
+          "name": "Proje Başlangıcı",
+          "date": "2026-02-19T00:03:34.508301",
+          "type": "start"
+        },
+        {
+          "name": "Temel İşleri Tamamlandı",
+          "date": "2026-03-07T00:03:34.508301",
+          "type": "completion",
+          "task_id": "foundation"
+        },
+        {
+          "name": "Çatı İşleri Tamamlandı",
+          "date": "2026-03-21T00:03:34.508301",
+          "type": "completion",
+          "task_id": "roof"
+        },
+        {
+          "name": "Boya İşleri Tamamlandı",
+          "date": "2026-04-21T00:03:34.508301",
+          "type": "completion",
+          "task_id": "painting"
+        },
+        {
+          "name": "Temizlik ve Teslim Tamamlandı",
+          "date": "2026-04-24T00:03:34.508301",
+          "type": "completion",
+          "task_id": "cleanup"
+        },
+        {
+          "name": "Proje Tamamlandı",
+          "date": "2026-04-24T00:03:34.508301",
+          "type": "completion"
+        }
+      ],
+      "resource_plan": {
+        "labor": {
+          "peak_workers": 10,
+          "average_workers": 6.16,
+          "total_worker_days": 419
+        },
+        "equipment": [
+          {
+            "name": "ekskavatör",
+            "duration_days": 6,
+            "task": "Kazı İşleri"
+          },
+          {
+            "name": "kamyon",
+            "duration_days": 6,
+            "task": "Kazı İşleri"
+          },
+          {
+            "name": "vibratör",
+            "duration_days": 6,
+            "task": "Kazı İşleri"
+          },
+          {
+            "name": "vinç",
+            "duration_days": 10,
+            "task": "Duvar ve Taşıyıcı Sistem"
+          },
+          {
+            "name": "kalıp",
+            "duration_days": 10,
+            "task": "Duvar ve Taşıyıcı Sistem"
+          },
+          {
+            "name": "iskele",
+            "duration_days": 10,
+            "task": "Duvar ve Taşıyıcı Sistem"
+          },
+          {
+            "name": "yük asansörü",
+            "duration_days": 4,
+            "task": "Çatı İşleri"
+          },
+          {
+            "name": "zımpara makinesi",
+            "duration_days": 4,
+            "task": "Zemin Kaplama"
+          },
+          {
+            "name": "boya tabancası",
+            "duration_days": 4,
+            "task": "Zemin Kaplama"
+          }
+        ],
+        "key_resources": [
+          "Vinç (ilk 30 gün)",
+          "Beton pompası (temel ve taşıyıcı sistem işleri)",
+          "İskele sistemi (cephe işleri)"
+        ]
+      },
+      "procurement_advice": {
+        "timeline": [
+          {
+            "task": "Kazı İşleri",
+            "materials": [
+              "çimento",
+              "demir",
+              "tuğla",
+              "beton"
+            ],
+            "order_by": "2026-02-08T00:03:34.508301",
+            "deliver_by": "2026-02-22T00:03:34.508301",
+            "lead_time_days": 14,
+            "urgency": "medium"
+          },
+          {
+            "task": "Temel İşleri",
+            "materials": [
+              "çimento",
+              "demir",
+              "tuğla",
+              "beton"
+            ],
+            "order_by": "2026-02-14T00:03:34.508301",
+            "deliver_by": "2026-02-28T00:03:34.508301",
+            "lead_time_days": 14,
+            "urgency": "medium"
+          },
+          {
+            "task": "Duvar ve Taşıyıcı Sistem",
+            "materials": [
+              "çimento",
+              "demir",
+              "tuğla",
+              "beton",
+              "cam",
+              "pencere",
+              "kapı",
+              "yalıtım"
+            ],
+            "order_by": "2026-02-15T00:03:34.508301",
+            "deliver_by": "2026-03-08T00:03:34.508301",
+            "lead_time_days": 21,
+            "urgency": "medium"
+          },
+          {
+            "task": "Çatı İşleri",
+            "materials": [
+              "çimento",
+              "demir",
+              "tuğla",
+              "beton",
+              "cam",
+              "pencere",
+              "kapı",
+              "yalıtım"
+            ],
+            "order_by": "2026-02-25T00:03:34.508301",
+            "deliver_by": "2026-03-18T00:03:34.508301",
+            "lead_time_days": 21,
+            "urgency": "medium"
+          },
+          {
+            "task": "Dış Cephe",
+            "materials": [
+              "çimento",
+              "demir",
+              "tuğla",
+              "beton",
+              "cam",
+              "pencere",
+              "kapı",
+              "yalıtım"
+            ],
+            "order_by": "2026-03-01T00:03:34.508301",
+            "deliver_by": "2026-03-22T00:03:34.508301",
+            "lead_time_days": 21,
+            "urgency": "medium"
+          },
+          {
+            "task": "Pencere ve Kapı Montajı",
+            "materials": [
+              "cam",
+              "pencere",
+              "kapı",
+              "yalıtım"
+            ],
+            "order_by": "2026-02-28T00:03:34.508301",
+            "deliver_by": "2026-03-28T00:03:34.508301",
+            "lead_time_days": 28,
+            "urgency": "high"
+          },
+          {
+            "task": "İç Bölme Duvar",
+            "materials": [
+              "çimento",
+              "demir",
+              "tuğla",
+              "beton",
+              "cam",
+              "pencere",
+              "kapı",
+              "yalıtım"
+            ],
+            "order_by": "2026-03-10T00:03:34.508301",
+            "deliver_by": "2026-03-31T00:03:34.508301",
+            "lead_time_days": 21,
+            "urgency": "medium"
+          },
+          {
+            "task": "Zemin Kaplama",
+            "materials": [
+              "seramik",
+              "boya",
+              "elektrik malzemesi",
+              "tesisat"
+            ],
+            "order_by": "2026-04-07T00:03:34.508301",
+            "deliver_by": "2026-04-14T00:03:34.508301",
+            "lead_time_days": 7,
+            "urgency": "medium"
+          },
+          {
+            "task": "Boya İşleri",
+            "materials": [
+              "seramik",
+              "boya",
+              "elektrik malzemesi",
+              "tesisat"
+            ],
+            "order_by": "2026-04-11T00:03:34.508301",
+            "deliver_by": "2026-04-18T00:03:34.508301",
+            "lead_time_days": 7,
+            "urgency": "medium"
+          }
+        ],
+        "key_advice": [
+          {
+            "material": "Çimento ve Demir",
+            "advice": "İlk 2 hafta içinde sipariş edin. Fiyat dalgalanmasına karşı erken alım düşünün.",
+            "priority": "high",
+            "estimated_cost": "Proje maliyetinin %25-30'u"
+          },
+          {
+            "material": "Pencere ve Kapı",
+            "advice": "Üretim süresi uzun (3-4 hafta). Erken ölçü alıp sipariş verin.",
+            "priority": "high",
+            "estimated_cost": "Proje maliyetinin %15-20'si"
+          },
+          {
+            "material": "Seramik ve Boya",
+            "advice": "Son 1 ayda sipariş edilebilir. Renk/seri seçimlerini erken netleştirin.",
+            "priority": "medium",
+            "estimated_cost": "Proje maliyetinin %10-15'i"
+          }
+        ],
+        "recommendations": [
+          "Malzemeleri parti parti alın, depolama maliyetinden kaçının",
+          "Uzun lead time’lı ürünleri (kapı, pencere) en erken sipariş edin",
+          "Nakit akışınıza göre ödeme planı yapın"
+        ]
+      },
+      "assumptions": {
+        "project_size_factor": 1.0,
+        "weather_buffer_days": 5,
+        "weekend_work": false
+      }
+    },
+    "warnings": [
+      "Ölçek zayıf tespit edildi. Şimdilik 1/2 varsayıldı (confidence=10%)."
+    ]
+  },
+  "recommendations": [
+    "Ölçek güveni düşükse projede en az 1 bilinen ölçüyle kalibrasyon yapın.",
+    "Kapı/pencere tespiti zayıfsa manuel kontrolle adetleri doğrulayın."
+  ],
+  "export_info": {
+    "formats_available": [
+      "json",
+      "txt",
+      "csv",
+      "html"
+    ],
+    "notes": "Bu rapor TulgaTech AI tarafından otomatik oluşturulmuştur."
+  }
+}

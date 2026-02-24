@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f6fa;
+            margin: 0;
+            padding: 0;
+            color: #2c3e50;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+        }
+
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            border-radius: 6px;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .section {
+            margin-top: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+        }
+
+        .section h2 {
+            margin-top: 0;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background: #ecf0f1;
+        }
+
+        .confidence-high {
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        .confidence-medium {
+            color: #f39c12;
+            font-weight: bold;
+        }
+
+        .confidence-low {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .warning {
+            background: #ffeaea;
+            color: #c0392b;
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 4px;
+        }
+
+        .recommendation {
+            background: #eafaf1;
+            color: #1e8449;
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 4px;
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #7f8c8d;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <header>
+        <h1>🏗️ {{ project_name }}</h1>
+        <p>
+            Proje ID: {{ project_id }} <br>
+            Tarih: {{ report_date }}
+        </p>
+    </header>
+
+    <!-- PROJECT INFO -->
+    <div class="section">
+        <h2>📊 Proje Bilgileri</h2>
+
+        <p><strong>Dosya:</strong> {{ filename }}</p>
+        <p><strong>Ölçek:</strong> 1/{{ scale }}</p>
+        <p><strong>Güven:</strong> {{ scale_confidence }}%</p>
+    </div>
+
+    <!-- QUANTITIES -->
+    <div class="section">
+        <h2>📐 Metraj Özeti</h2>
+
+        <table>
+            <tr>
+                <th>Kalem</th>
+                <th>Miktar</th>
+                <th>Birim</th>
+                <th>Güven</th>
+            </tr>
+
+            {{ quantities_rows }}
+
+        </table>
+    </div>
+
+    <!-- COST -->
+    <div class="section">
+        <h2>💰 Maliyet Analizi</h2>
+
+        <p>
+            <strong>Toplam Tahmini Maliyet:</strong>
+            {{ total_cost }} {{ currency }}
+        </p>
+
+        {{ cost_scenarios }}
+    </div>
+
+    <!-- SCHEDULE -->
+    <div class="section">
+        <h2>📅 Zaman Planı</h2>
+
+        <p><strong>Başlangıç:</strong> {{ start_date }}</p>
+        <p><strong>Toplam Süre:</strong> {{ total_duration }}</p>
+
+        <ul>
+            {{ milestones }}
+        </ul>
+    </div>
+
+    <!-- RECOMMENDATIONS -->
+    <div class="section">
+        <h2>💡 Öneriler</h2>
+
+        {{ recommendations }}
+    </div>
+
+    <!-- WARNINGS -->
+    <div class="section">
+        <h2>⚠️ Uyarılar</h2>
+
+        {{ warnings }}
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>TulgaTech AI - Akıllı İnşaat Asistanı</p>
+        <p>© {{ year }}</p>
+    </footer>
+
+</div>
+
+</body>
+</html>

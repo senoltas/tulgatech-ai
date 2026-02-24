@@ -1,0 +1,42 @@
+TULGATECH AI - PROJE ANALİZ RAPORU
+============================================================
+
+TEMEL BİLGİLER:
+----------------------------------------
+Proje ID: N/A
+Dosya: N/A
+Tarih: 17.02.2026 17:53
+Ölçek: 1/2 (Güven: 10%)
+
+ANA METRAJLAR:
+----------------------------------------
+• Brüt İnşaat Alanı: 0.0 m² (Güven: 60%)
+• Net Kullanım Alanı: 0.0 m² (Güven: 42%)
+• Dış Duvar Alanı: 248.3 m² (Güven: 60%)
+• İç Duvar Alanı: 3446.9 m² (Güven: 50%)
+• Kapı Sayısı: 0.0 adet (Güven: 10%)
+• Zemin Kaplama Alanı: 0.0 m² (Güven: 38%)
+• Boya Alanı: 4249.5 m² (Güven: 29%)
+
+MALİYET ÖZETİ:
+----------------------------------------
+Toplam Tahmini Maliyet: 2,078,245 TRY
+
+ZAMAN PLANI:
+----------------------------------------
+Başlangıç Tarihi: 2026-02-24T17:53:00.299820
+Toplam Süre: N/A
+
+ÖNERİLER:
+----------------------------------------
+1. Ölçek güveni düşükse projede en az 1 bilinen ölçüyle kalibrasyon yapın.
+2. Kapı/pencere tespiti zayıfsa manuel kontrolle adetleri doğrulayın.
+
+UYARILAR:
+----------------------------------------
+1. Ölçek bulunamadı. Varsayılan 1/2 kullanıldı.
+
+============================================================
+NOT: Bu rapor otomatik olarak oluşturulmuştur.
+Detaylı kontrol ve onay için profesyonel bir inşaat mühendisine danışınız.
+============================================================
