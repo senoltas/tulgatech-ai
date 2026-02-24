@@ -62,4 +62,4 @@ To become a leading AI-powered decision support platform for the construction in
 
 ---
 
-© TulgaTech | All Rights Reserved
+© 2026 Tulga Dijital Sistemler A.Ş. All rights reserved.
