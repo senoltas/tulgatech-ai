@@ -210,3 +210,17 @@ __pycache__/
 venv/
 __pycache__/
 data/*.dxf 
+
+# Large CAD / BIM files (never commit)
+data/*.dxf
+data/*.dwg
+data/*.pdf
+
+# Generated outputs
+reports/
+reports/*
+!reports/**/.gitkeep
+
+# Python cache
+__pycache__/
+*.pyc
