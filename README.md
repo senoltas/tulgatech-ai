@@ -62,4 +62,12 @@ To become a leading AI-powered decision support platform for the construction in
 
 ---
 
+## UI / UX Design
+
+Figma Design File:
+https://www.figma.com/design/JopWpUDBicRkNLkmckP103/TulgaTech_AI_UI_v1_FINAL?node-id=1-34&t=RGjAkpTDcCAXKeQr-1
+
+---
+
+
 © 2026 Tulga Dijital Sistemler A.Ş. All rights reserved.
