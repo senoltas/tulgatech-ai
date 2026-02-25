@@ -69,5 +69,25 @@ https://www.figma.com/design/JopWpUDBicRkNLkmckP103/TulgaTech_AI_UI_v1_FINAL?nod
 
 ---
 
+## 🚀 Run Demo
+
+Run demo with default test file:
+
+```bash
+python tools/run_demo.py
+```
+
+Run demo with custom DXF:
+
+```bash
+python tools/run_demo.py data/your_file.dxf
+```
+
+Output:
+- reports/demo/demo_result_YYYYMMDD_HHMMSS.json
+
+Note:
+- DXF/PDF/DWG files are not committed to GitHub.
+- Keep your test files locally under `data/`.
 
 © 2026 Tulga Dijital Sistemler A.Ş. All rights reserved.

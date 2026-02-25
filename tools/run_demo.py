@@ -13,7 +13,10 @@ from engine.project_reader import ProjectReader
 
 def main():
     # Input DXF path (you can change this)
-    dxf_path = Path("data") / "test_2.dxf"
+    if len(sys.argv) > 1:
+    	dxf_path = Path(sys.argv[1])
+    else:
+    	dxf_path = Path("data") / "test_2.dxf"
 
     if not dxf_path.exists():
         print(f"[ERROR] DXF not found: {dxf_path.resolve()}")
