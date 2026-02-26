@@ -144,9 +144,8 @@ class ProjectReader:
         # -------- ARCH --------
         architectural = self._extract_architecture(elements)
         
-                # -------- SCALE --------
-        self._detect_scale(elements)
-
+         
+       
         # clusters -> m² dönüşümü vs burada...
 
         # -------- ARCH --------
