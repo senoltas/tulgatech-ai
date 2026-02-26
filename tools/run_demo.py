@@ -32,7 +32,9 @@ def main():
         return
 
     r = ProjectReader().read_dxf(str(dxf_path), scale_override=args.scale)
-
+    sc = r.get("scale_confidence", 0) or 0
+    if float(sc) < 0.5:
+        print(f"[WARN] Scale confidence is low ({sc}). Use --scale to override (e.g., --scale 1.0).")
         # Debug: show all clusters and their quality
     cs = r.get("clusters", []) or []
     if cs:

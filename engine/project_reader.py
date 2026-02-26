@@ -272,9 +272,9 @@ class ProjectReader:
     # =================================================
     def _detect_scale(self, elements: Dict[str, Any]):
         # şimdilik sabit
-        self.scale = 0.5
+        self.scale = 1.0
         self.scale_confidence = 0.1
-        self.warnings.append("Ölçek bulunamadı. Varsayılan 1/2 kullanıldı.")
+        self.warnings.append("Ölçek bulunamadı. Varsayılan 1.0 kullanıldı.")
 
     # =================================================
     # ARCHITECTURAL
