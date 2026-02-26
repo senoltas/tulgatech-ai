@@ -25,6 +25,12 @@ def main():
 
     r = ProjectReader().read_dxf(str(dxf_path))
 
+        # Debug: show all clusters and their quality
+    cs = r.get("clusters", []) or []
+    if cs:
+        print("[DEBUG] clusters (all):")
+        for c in cs:
+            print(f" - {c.get('id')}: quality={c.get('quality')} net_area_m2={c.get('net_area_m2')} inserts={c.get('insert_count')} spaces={c.get('spaces_count')}")
     out_dir = Path("reports") / "demo"
     out_dir.mkdir(parents=True, exist_ok=True)
 
@@ -38,7 +44,21 @@ def main():
     qs = r.get("quantities", []) or []
     net = next((q for q in qs if q.get("code") == "net_area_main_cluster_m2"), None)
     tot = next((q for q in qs if q.get("code") == "net_area_ok_clusters_total_m2"), None)
+    
 
+    # Extra: list cluster areas if present
+    per_cluster = [q for q in qs if q.get("code") == "net_area_cluster_m2"]
+    if per_cluster:
+        print("[CLUSTERS] net_area_cluster_m2:")
+        for q in sorted(per_cluster, key=lambda x: (x.get("meta", {}).get("cluster_id", ""))):
+            cid = q.get("meta", {}).get("cluster_id")
+            val = q.get("value")
+            unit = q.get("unit")
+            sc = q.get("meta", {}).get("spaces_count")
+            area_sum = q.get("meta", {}).get("space_sum_m2")
+            print(f" - {cid}: {val} {unit} (spaces_count={sc}, space_sum_m2={area_sum})")
+    else:
+        print("[CLUSTERS] No per-cluster quantity found (code=net_area_cluster_m2).")
     print("[OK] Demo result written:", out_path.as_posix())
     if net:
         print(f"[SUMMARY] Main net area: {net.get('value')} {net.get('unit')} (cluster={net.get('meta',{}).get('cluster_id')})")
@@ -48,3 +68,9 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+
+
+
