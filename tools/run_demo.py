@@ -4,6 +4,8 @@ import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
+import argparse
+
 import json
 from pathlib import Path
 from datetime import datetime
@@ -11,19 +13,25 @@ from datetime import datetime
 from engine.project_reader import ProjectReader
 
 
+
+
+
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("dxf", nargs="?", default=str(Path("data") / "test_2.dxf"))
+    parser.add_argument("--scale", type=float, default=None)
+    args = parser.parse_args()
+
+    dxf_path = Path(args.dxf)
     # Input DXF path (you can change this)
-    if len(sys.argv) > 1:
-    	dxf_path = Path(sys.argv[1])
-    else:
-    	dxf_path = Path("data") / "test_2.dxf"
+    
 
     if not dxf_path.exists():
         print(f"[ERROR] DXF not found: {dxf_path.resolve()}")
         print("Put a sample DXF under /data (but DO NOT commit large DXFs to GitHub).")
         return
 
-    r = ProjectReader().read_dxf(str(dxf_path))
+    r = ProjectReader().read_dxf(str(dxf_path), scale_override=args.scale)
 
         # Debug: show all clusters and their quality
     cs = r.get("clusters", []) or []

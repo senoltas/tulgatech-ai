@@ -16,7 +16,7 @@ class ProjectReader:
     # =================================================
     # MAIN ENTRY
     # =================================================
-    def read_dxf(self, file_path: str) -> Dict[str, Any]:
+    def read_dxf(self, file_path: str, scale_override: float | None = None) -> Dict[str, Any]:
         if not file_path.lower().endswith(".dxf"):
             raise ValueError("Sadece DXF desteklenir")
 
@@ -121,6 +121,15 @@ class ProjectReader:
 
         # -------- SCALE --------
         self._detect_scale(elements)
+        # scale override (if provided)
+        if scale_override is not None:
+            try:
+                self.scale = float(scale_override)
+                self.scale_confidence = 1.0
+                self.warnings.append(f"Scale override used: {self.scale}")
+            except Exception:
+                self.warnings.append(f"Invalid scale_override: {scale_override} (ignored)")
+        
         # --- CLUSTER AREA -> m² ---
         for c in clusters:
             try:
