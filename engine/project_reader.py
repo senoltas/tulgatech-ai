@@ -237,7 +237,15 @@ class ProjectReader:
                     "net_area_drawing_units2": c.get("net_area_drawing_units2"),
                 },
             })
-            
+        # --- total OK clusters net area ---
+        quantities.append({
+            "code": "net_area_ok_clusters_total_m2",
+            "name": "Total Net Area (OK Clusters) (m²)",
+            "value": round(float(total_ok), 4),
+            "unit": "m^2",
+            "source": "DXF+scale",
+            "meta": {"ok_clusters_count": ok_count},
+        })       
 	
         return {
             "elements": elements,
