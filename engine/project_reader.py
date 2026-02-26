@@ -202,8 +202,43 @@ class ProjectReader:
                     
                 }
             })
+	
+	
+	# --- per-cluster net area quantities (quality=ok) ---
+        
+        total_ok = 0.0
+        ok_count = 0
 
+        for c in clusters:
+            cid = c.get("id") or c.get("cluster_id")
+            net_m2 = c.get("net_area_m2")
 
+            if net_m2 is None:
+                continue
+
+            # sadece OK olanlar total'e girsin
+            if c.get("quality") == "ok":
+                total_ok += float(net_m2)
+                ok_count += 1
+
+            quantities.append({
+                "code": "net_area_cluster_m2",
+                "name": "Net Area (Cluster) (m²)",
+                "value": round(float(net_m2), 4),
+                "unit": "m^2",
+                "source": "DXF+scale",
+                "meta": {
+                    "cluster_id": cid,
+                    "quality": c.get("quality"),
+                    "spaces_count": c.get("spaces_count"),
+                    "insert_count": c.get("insert_count"),
+                    "picked_lines": c.get("picked_lines"),
+                    "bbox": c.get("bbox"),
+                    "net_area_drawing_units2": c.get("net_area_drawing_units2"),
+                },
+            })
+            
+	
         return {
             "elements": elements,
             "architectural": architectural,
