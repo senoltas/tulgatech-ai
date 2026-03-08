@@ -38,9 +38,18 @@ class WallDetector:
             # Filter by length
             if length_m < min_length_m:
                 continue
-            
-            # Check layer keywords (basic heuristic)
-            is_wall_layer = any(kw in layer for kw in ["DUVAR", "WALL", "MUR", "PARETE"])
+            # Exclude detail layers
+            is_detail_layer = any(kw in layer for kw in ["DETL", "DETAIL", "ANNO", "ANNO"])
+            if is_detail_layer:
+                continue
+            # Only accept walls with correct layer names
+            is_wall_layer = any(kw in layer for kw in ["M-Duvar", "DUVAR", "WALL", "MUR"])
+        
+            # Exclude everything else
+            is_excluded = any(kw in layer for kw in ["DETL", "ANNO", "FLOR", "LEVL", "AREA", "BEAM"])
+        
+            if is_excluded or not is_wall_layer:
+                continue
             
             # Calculate angle
             angle = math.degrees(math.atan2(dy, dx)) % 180.0
