@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=65.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tulgatech-ai"
+version = "0.1.0-alpha"
+description = "Construction Data Intelligence Platform"
+requires-python = ">=3.9"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
